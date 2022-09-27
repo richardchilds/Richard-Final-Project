@@ -1,23 +1,19 @@
-const hamburgerButton = document.getElementById("nav-trigger");
-const closeButton = document.getElementById("nav-close");
-const menu = document.querySelector("#nav-menu");
+document
+  .getElementById("nav-trigger")
+  .addEventListener("click", sideMenuAppears);
+document
+  .getElementById("nav-close")
+  .addEventListener("click", sideMenuDisappears);
 
-function toggleMenu(){
-  menu.classList.toggle("menu-open")
+console.log("nav-trigger() is active");
+console.log("nav-close() is active");
+
+function sideMenuAppears() {
+  console.log("sideMenuAppears() is active");
+  document.getElementById("nav-menu").classList.add("show-menu");
 }
 
-hamburgerButton.addEventListener("click", toggleMenu); 
-closeButton.addEventListener("click", toggleMenu); 
- 
- 
- //document.getElementById('nav-trigger').addEventListener('click', sideMenuAppears);
- // document.getElementById('nav-close').addEventListener('click', sideMenuDisappears);
-
-  //function sideMenuAppears() {
-  //document.getElementById('nav-menu').classList.add('show-menu');
-  //}
-  
-  //function sideMenuDisappears() {
-  //document.getElementById('nav-menu').classList.remove('show-menu');
-  //}
-
+function sideMenuDisappears() {
+  console.log("sideMenuDisappears() is active");
+  document.getElementById("nav-menu").classList.remove("show-menu");
+}
